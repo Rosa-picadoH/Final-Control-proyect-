@@ -53,7 +53,7 @@ Las excepciones se registran en `logs/finalcontrol.log` junto con fecha y detall
 
 1. Instale .NET 8 Desktop Runtime y SQL Server LocalDB.
 2. Ejecute el `.exe` contenido en `Release/FinalControl`, o abra la solución en Visual Studio.
-3. En el primer inicio se aplican las migraciones y se generan los datos demo.
+3. En el primer inicio, la aplicación se conecta a `(localdb)\MSSQLLocalDB`, crea o actualiza `FinalControlDbFinal` y genera los datos demo.
 4. Use `admin` / `Admin123*`.
 
 Para una instalación manual de base de datos, ejecute `database/FinalControlDb.sql` solamente en una base limpia.

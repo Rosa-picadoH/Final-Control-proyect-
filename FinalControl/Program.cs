@@ -13,7 +13,7 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
         var services = new ServiceCollection();
-        const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=FinalControlDb;Trusted_Connection=True;TrustServerCertificate=True;";
+        const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=FinalControlDbFinal;Trusted_Connection=True;TrustServerCertificate=True;";
         services.AddDbContext<FinalControlDbContext>(options => options.UseSqlServer(connectionString));
         services.AddHttpClient<ExchangeRateService>();
         services.AddSingleton<Logger>();

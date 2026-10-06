@@ -26,7 +26,7 @@ Aplicación de escritorio para administrar inventario y ventas. Fue construida c
 
 ## Base de datos y migraciones
 
-El proyecto incluye la migración inicial en `FinalControl/Migrations`. La aplicación ejecuta `Database.Migrate()` al iniciar; por tanto, para una instalación nueva no es necesario ejecutar SQL manualmente.
+El proyecto usa la base `FinalControlDbFinal` en `(localdb)\MSSQLLocalDB`. Incluye una migración inicial en `FinalControl/Migrations` y aplica `Database.Migrate()` al iniciar; por tanto, para una instalación nueva no es necesario ejecutar SQL manualmente.
 
 Para administrar migraciones desde la carpeta `FinalControl`:
 
@@ -61,4 +61,3 @@ El ejecutable y sus dependencias se generan en `Release/FinalControl`. El script
 
 ## GitHub
 
-Publique únicamente el historial de cambios reales del equipo. No cree commits con fechas falsas ni presente cambios de última hora como si hubieran sido hechos en fases anteriores.
