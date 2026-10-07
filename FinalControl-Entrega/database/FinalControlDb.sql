@@ -1,9 +1,9 @@
 /* FinalControl - instalación manual para SQL Server LocalDB / SQL Server.
-   Úselo solamente en una base FinalControlDb nueva. La aplicación crea la base
+   Úselo solamente en una base FinalControlDbFinal nueva. La aplicación crea la base
    automáticamente mediante EF Core Migrations en una instalación normal. */
-IF DB_ID('FinalControlDb') IS NULL CREATE DATABASE FinalControlDb;
+IF DB_ID('FinalControlDbFinal') IS NULL CREATE DATABASE FinalControlDbFinal;
 GO
-USE FinalControlDb;
+USE FinalControlDbFinal;
 GO
 IF OBJECT_ID('__EFMigrationsHistory', 'U') IS NULL
     CREATE TABLE __EFMigrationsHistory (MigrationId nvarchar(150) NOT NULL PRIMARY KEY, ProductVersion nvarchar(32) NOT NULL);

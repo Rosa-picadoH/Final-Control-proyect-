@@ -13,9 +13,9 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
         var services = new ServiceCollection();
-        const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=FinalControlDb;Trusted_Connection=True;TrustServerCertificate=True;";
+        const string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=FinalControlDbFinal;Trusted_Connection=True;TrustServerCertificate=True;";
         services.AddDbContext<FinalControlDbContext>(options => options.UseSqlServer(connectionString));
-        services.AddHttpClient<ExchangeRateService>();
+        services.AddHttpClient<ExchangeRateService>(client => client.Timeout = TimeSpan.FromSeconds(8));
         services.AddSingleton<Logger>();
         services.AddScoped<AuthenticationService>();
         services.AddScoped<ProductService>();
@@ -38,7 +38,11 @@ internal static class Program
         catch (Exception exception)
         {
             logger.Error(exception);
-            MessageBox.Show("No fue posible iniciar FinalControl. Revise logs/finalcontrol.log.", "FinalControl - Error de inicio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(
+                $"No fue posible iniciar FinalControl. Revise el registro en:\n{logger.FilePath}",
+                "FinalControl - Error de inicio",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
         }
     }
 }
